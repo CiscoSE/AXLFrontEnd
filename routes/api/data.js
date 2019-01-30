@@ -10,4 +10,7 @@ router.route("/startSearch")
 router.route("/checkResult")
     .post(dataController.checkResult);
 
+router.route("/removeDbEntry")
+    .post(dataController.removeDbEntry);
+
 module.exports = router;

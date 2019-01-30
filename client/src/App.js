@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import logo from './logo.svg';
-import API from "./utils/API";
-import ResultView from "./pages/ResultView"
+import DatabaseSearch from "./pages/DatabaseSearch"
 import './App.css';
 
 class App extends Component {
@@ -13,7 +11,7 @@ class App extends Component {
         <Router>
           <div>
             <Switch>
-              <Route exact path="/" component={ResultView} />
+              <Route exact path="/" component={DatabaseSearch} />
             </Switch>
           </div>
         </Router>

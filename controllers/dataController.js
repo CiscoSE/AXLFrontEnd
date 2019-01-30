@@ -13,7 +13,7 @@ module.exports = {
     startSearch: function(req, res) {
         console.log("req.body in startSearch", req.body.searchId)
         const spawn = require("child_process").spawn;
-        const pythonProcess = spawn('python',[path.join(__dirname, "../scripts/python/ccmdbsearch.py"), req.body.searchId, req.body.searchString])
+        const pythonProcess = spawn('python',[path.join(__dirname, "../scripts/python/ccmdbsearch.py"), req.body.searchId, req.body.searchString, req.body.clusterIp, req.body.clusterVersion, req.body.axlUser, req.body.axlPassword])
         res.status(202).send()
 
         pythonProcess.stdout.on('data', (data) => {
@@ -29,4 +29,12 @@ module.exports = {
             .then(dbModel => res.send(dbModel))
             .catch(err => res.status(422).json(err));
     },
+
+    removeDbEntry: function(req, res) {
+        console.log('req.body in removeDbEntry', req.body.searchId)
+        db.models.Result
+            .findOneAndDelete({ _id: req.body.searchId})
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
+    }
 }

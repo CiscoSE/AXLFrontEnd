@@ -6,10 +6,13 @@ export default {
   setSearchString: function(searchString) {
     return axios.post("/api/data/setSearchString", searchString)
   },
-  startSearch: function(searchId) {
-    return axios.post("/api/data/startSearch", searchId)
+  startSearch: function(searchParam) {
+    return axios.post("/api/data/startSearch", searchParam)
   },
   checkResult: function(searchId) {
     return axios.post("/api/data/checkResult", searchId)
   },
+  removeDbEntry: function(searchId) {
+    return axios.post("/api/data/removeDbEntry", searchId)
+  }
 };
