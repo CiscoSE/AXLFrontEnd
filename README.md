@@ -38,3 +38,13 @@ yarn build
 ```
 Finally, the mongo database will need to be installed.  Instructions for download, installation, and startup can be found at the MongoDb site here: https://www.mongodb.com/
 
+## How to use the Demo Site
+There is no need to install this application if you're just looking to toy with the demo app.  It is being hosted from a server reachable from within the Cisco network.  For URL details contact Pat Whalen at pawhalen@cisco.com.  The demo app expect 5 fields to be entered:
+
+Search Text - This is the text or number that you want to search the CUCM database to find (in other words what you've entered into a GUI field in CUCM).
+CUCM IP Address - This is the IP of the CUCM publisher that AXL queries
+CUCM Version - The version number of the cluster - ie 11.5
+AXL Username: The axl application username
+AXL Password: The password for the axl user
+
+Pressing search will begin a search of the CUCM database for the Search Text.  Please note - it takes some time to comb through the database.  There is a lot of room for efficiencies to be built into the Python script controlling this... but this is meant to be a demo app
