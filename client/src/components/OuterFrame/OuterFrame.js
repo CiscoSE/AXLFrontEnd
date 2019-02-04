@@ -313,7 +313,6 @@ class OuterFrame extends React.Component {
                                 <Typography variant='h6' gutterBottom color='primary'>
                                   To search CUCM's database please input the requested information on the left and press 'Search.'
                                 </Typography>
-                                
                                 <Typography variant='h6' gutterBottom color='secondary'>
                                   Be patient - this search can take upwards of 10 minutes to complete.
                                 </Typography>
